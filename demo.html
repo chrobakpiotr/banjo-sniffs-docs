@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Banjo Skills — architecture demonstration</title><style>body{margin:0;background:#101827;color:#e9edf4;font:20px/1.5 system-ui}main{max-width:1100px;margin:0 auto;padding:44px}h1{font-size:40px;color:#fff}h2{color:#80e0ce;margin-top:30px}table{border-collapse:collapse;font-size:17px}td,th{padding:14px;border:1px solid #394659;vertical-align:top}th{background:#223044}code{color:#9be5d6}a{color:#9be5d6}.badge{color:#91a4bc;font-size:16px;letter-spacing:1px}blockquote{border-left:3px solid #80e0ce;padding-left:20px;color:#c8d3e2}</style><main><div class="badge">BANJO SKILLS 1.0 · SYNTHETIC DEMONSTRATION · ACTUAL OUTPUT</div><h1>Architecture assessment</h1><h2>The request</h2><blockquote>Assess a design for a local CSV validator. Accepted constraints: local processing, bounded memory, no network. Proposed change: upload CSVs to a remote service for validation. No authorization exists to transfer customer data. No implementation or runtime is supplied. Compare viable options and recommend the next evidence needed. Do not invent numeric targets.
+</blockquote><h2>Design assessment</h2>
+<p><strong>Decision status: PROPOSED.</strong> The stated requirements are local processing, bounded memory, and no network. Uploading CSVs to a remote validation service conflicts with those requirements, and there is no authorization to transfer customer data. No implementation or runtime was supplied, so this is a design assessment; it does not establish current behavior or implementation conformance.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Fit with accepted constraints</th>
+<th>Tradeoffs and unknowns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Keep validation local and process rows incrementally</td>
+<td>Best fit. A streaming parser can process records without loading the whole file, and the validator can avoid network access.</td>
+<td>The memory bound depends on parser buffering, the largest accepted record/field, and the state required by validation rules. Whole-file or cross-row rules may need bounded summaries or a different local strategy. None of these details is supplied.</td>
+</tr>
+<tr>
+<td>Keep processing local and spool input or intermediate data to local disk</td>
+<td>Preserves local and no-network processing while allowing memory use to stay bounded when rules need replay or larger working state.</td>
+<td>Adds disk space, cleanup, permissions, and sensitive temporary-data handling concerns. Whether spooling is needed depends on the rules and parser.</td>
+</tr>
+<tr>
+<td>Upload files to a remote validation service</td>
+<td>Does not fit the accepted constraints: it sends data off-device and requires network access. The transfer also lacks authorization.</td>
+<td>Do not proceed under the current requirements. It could only be reconsidered after authorized decision makers explicitly revise the constraints and approve the data transfer, with the data flow and handling reviewed.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Recommendation (PROPOSED):</strong> retain local, no-network processing. Start with incremental parsing and validation; use local disk spooling only if identified rules require it. This best preserves the accepted constraints while keeping the design reversible. It does not yet prove a memory bound: the parser's buffering, record size limits, and rule state must be understood and bounded.</p>
+<h2>Next evidence needed</h2>
+<p>The cheapest useful next step is to document the validator's input and rule contract, then assess a small local prototype or existing parser against it. Gather:</p>
+<ul>
+<li>The validation rules, especially whether any depend on later rows, whole-file totals, uniqueness, or cross-record references.</li>
+<li>Expected CSV dialect and encoding behavior, malformed-input handling, and the largest records or fields the validator must accept.</li>
+<li>Representative sanitized fixtures with expected outcomes, including edge cases relevant to quoting, line endings, empty values, and validation failures.</li>
+<li>The parser's buffering behavior and the validator's retained state, so the memory bound can be reasoned about rather than assumed.</li>
+</ul>
+<p>Once an implementation and runtime are available, measure peak memory on those fixtures and confirm the validator makes no network requests in the intended environment. No numeric thresholds should be set until the actual operating envelope and requirements are provided.</p></main></html>
