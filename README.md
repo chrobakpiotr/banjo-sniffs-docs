@@ -1,5 +1,7 @@
 # Banjo Sniffs™ — documentation
 
+> Banjo Sniffs out the gap between what the ticket accepted, what the tests prove, and what the diff claims.
+
 Public documentation for [Banjo Sniffs](https://chrobakpiotr.github.io/banjo-sniffs-docs/), a set of
 instructions for an AI coding assistant: requirement-traced code reviews, test-gap maps, trust-boundary
 prompts, architecture decision records, verification plans and AGENTS.md routing. Read-only by default,
