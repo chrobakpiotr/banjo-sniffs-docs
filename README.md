@@ -1,4 +1,4 @@
-# Banjo Sniffs™ — documentation
+# Banjo Sniffs™ - documentation
 
 > Banjo Sniffs out the gap between what the ticket accepted, what the tests prove, and what the diff claims.
 
@@ -7,7 +7,7 @@ instructions for an AI coding assistant: requirement-traced code reviews, test-g
 prompts, architecture decision records, verification plans and AGENTS.md routing. Read-only by default,
 no network, any stack.
 
-- [User guide](https://chrobakpiotr.github.io/banjo-sniffs-docs/) — modes, example prompts, how to read a report
+- [User guide](https://chrobakpiotr.github.io/banjo-sniffs-docs/) - modes, example prompts, how to read a report
 - Demonstrations: [review of a real public commit](https://chrobakpiotr.github.io/banjo-sniffs-docs/review-real-commit.html) ·
   [review of a synthetic PR with planted defects](https://chrobakpiotr.github.io/banjo-sniffs-docs/review-planted-defects.html) ·
   [test-gap analysis](https://chrobakpiotr.github.io/banjo-sniffs-docs/test-gap.html) ·
