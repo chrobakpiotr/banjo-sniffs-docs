@@ -70,7 +70,7 @@ Templates are optional starting points, not project policy. Ask the assistant to
 
 ## Optional HTML version
 
-From version 1.4.0. Ask for it when you want a report you can open in a browser or send to someone, for example: “Also save the report as HTML.” The assistant writes a self-contained `.html` file next to the Markdown file: the same content, status labels in colour, no scripts and no remote resources. The Markdown file stays the canonical record.
+From version 1.4.0. Ask for it when you want a report you can open in a browser, print, or send to someone, for example: “Also save the report as HTML.” The assistant writes the Markdown file first if it does not exist, then a self-contained `.html` file with the same content: status labels in colour, no scripts, no remote resources. It saves the HTML beside the Markdown file in the folder you chose (or in a new folder outside your project) and never overwrites an existing file. The Markdown file stays the canonical record. The HTML contains exactly what the Markdown contains, so check it for anything you do not want to share before you send it.
 
 How the Markdown itself looks depends on where you read it: formatted in tools that render Markdown, plain text in a terminal.
 
