@@ -68,6 +68,12 @@ These labels describe the stated review scope; they do not establish general pro
 
 Templates are optional starting points, not project policy. Ask the assistant to use or adapt one for an authorized task, for example: “Draft an ADR using the project’s existing format; if none exists, use the available ADR template and mark the decision as proposed.” Review the result before adopting it. Generated reports or documentation should stay within the scope and destination you authorized. Any rights or terms for generated material depend on the applicable host and marketplace terms; this guide makes no rights grant or legal promise.
 
+## Optional HTML version
+
+From version 1.4.0. Ask for it when you want a report you can open in a browser or send to someone, for example: “Also save the report as HTML.” The assistant writes a self-contained `.html` file next to the Markdown file: the same content, status labels in colour, no scripts and no remote resources. The Markdown file stays the canonical record.
+
+How the Markdown itself looks depends on where you read it: formatted in tools that render Markdown, plain text in a terminal.
+
 ## Your output and the licence
 
 Everything the skill produces for you - review reports, handovers, test-gap maps, decision records, project guidance, including template wording that ends up inside those documents - is yours to keep, commit and share with the people working on the same project. The skill itself (instructions, references, unfilled templates) may not be extracted, copied or redistributed, alone or inside another skill or service; the marketplace controls access to it. Provided as is, liability limited to the price paid, without affecting rights the law or the marketplace's money-back guarantee give you.
