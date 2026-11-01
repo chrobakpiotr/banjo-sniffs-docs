@@ -1,2 +1,5 @@
 .idea/
 .DS_Store
+
+# Banjo Sniffs is a paid skill: never commit an installed copy
+.claude/skills/banjo-sniffs/

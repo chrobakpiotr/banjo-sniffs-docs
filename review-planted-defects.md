@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="README.md">Home</a> &nbsp;·&nbsp; <a href="user-guide.md">User guide</a> &nbsp;·&nbsp; <b>Planted-defect review</b> &nbsp;·&nbsp; <a href="review-real-commit.md">Real-commit review</a> &nbsp;·&nbsp; <a href="test-gap.md">Test-gap analysis</a> &nbsp;·&nbsp; <a href="architecture-assessment.md">Architecture assessment</a> &nbsp;·&nbsp; <a href="https://www.agensi.io/skills/banjo-sniffs-ai-assisted-software-development"><b>Get it on Agensi</b></a>
+  <a href="README.md">Home</a> &nbsp;·&nbsp; <a href="user-guide.md">User guide</a> &nbsp;·&nbsp; <b>Planted-defect review</b> &nbsp;·&nbsp; <a href="review-real-commit.md">Real-commit review</a> &nbsp;·&nbsp; <a href="test-gap.md">Test-gap analysis</a> &nbsp;·&nbsp; <a href="architecture-assessment.md">Architecture assessment</a> &nbsp;·&nbsp; <a href="https://www.agensi.io/skills/banjo-sniffs-evidence-based-code-review-architecture"><b>Get it on Agensi</b></a>
 </p>
 
 ---
@@ -160,4 +160,4 @@ Fix AC-3 (cumulative per-charge cap) and AC-5 (`cents > 0` check), add tests for
 
 ---
 
-<p align="center"><sub>© 2026 Piotr Chrobak · Banjo Sniffs™ · <a href="LICENSE">License</a> · <a href="https://www.agensi.io/skills/banjo-sniffs-ai-assisted-software-development">Get it on Agensi</a></sub></p>
+<p align="center"><sub>© 2026 Piotr Chrobak · Banjo Sniffs™ · <a href="LICENSE">License</a> · <a href="https://www.agensi.io/skills/banjo-sniffs-evidence-based-code-review-architecture">Get it on Agensi</a></sub></p>

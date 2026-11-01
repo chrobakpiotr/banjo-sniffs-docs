@@ -3,7 +3,7 @@
 <p align="center"><b>A skill for your AI coding assistant. It reviews a change against its ticket, shows which criteria your tests really prove, and compares design options. Every verdict is tied to evidence it actually has.</b></p>
 
 <p align="center">
-  <a href="https://www.agensi.io/skills/banjo-sniffs-ai-assisted-software-development"><img alt="Get it on Agensi" src="https://img.shields.io/badge/Get%20it%20on-Agensi-0d7d73?style=for-the-badge"></a>
+  <a href="https://www.agensi.io/skills/banjo-sniffs-evidence-based-code-review-architecture"><img alt="Get it on Agensi" src="https://img.shields.io/badge/Get%20it%20on-Agensi-0d7d73?style=for-the-badge"></a>
   &nbsp;<a href="user-guide.md"><img alt="Read the user guide" src="https://img.shields.io/badge/Read-the%20user%20guide-475569?style=for-the-badge"></a>
 </p>
 
@@ -94,7 +94,7 @@ More prompts and how to read a report: [user guide](user-guide.md).
 ## Get it
 
 <p>
-  <a href="https://www.agensi.io/skills/banjo-sniffs-ai-assisted-software-development"><img alt="Get it on Agensi" src="https://img.shields.io/badge/Get%20it%20on-Agensi-0d7d73?style=for-the-badge"></a>
+  <a href="https://www.agensi.io/skills/banjo-sniffs-evidence-based-code-review-architecture"><img alt="Get it on Agensi" src="https://img.shields.io/badge/Get%20it%20on-Agensi-0d7d73?style=for-the-badge"></a>
 </p>
 
 Banjo Sniffs is a `SKILL.md` skill sold on the Agensi marketplace. Hosts differ in how they enable skills; see Getting started in the [user guide](user-guide.md). This repository holds only the documentation.

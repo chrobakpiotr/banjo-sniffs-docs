@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="README.md">Home</a> &nbsp;·&nbsp; <b>User guide</b> &nbsp;·&nbsp; <a href="review-planted-defects.md">Planted-defect review</a> &nbsp;·&nbsp; <a href="review-real-commit.md">Real-commit review</a> &nbsp;·&nbsp; <a href="test-gap.md">Test-gap analysis</a> &nbsp;·&nbsp; <a href="architecture-assessment.md">Architecture assessment</a> &nbsp;·&nbsp; <a href="https://www.agensi.io/skills/banjo-sniffs-ai-assisted-software-development"><b>Get it on Agensi</b></a>
+  <a href="README.md">Home</a> &nbsp;·&nbsp; <b>User guide</b> &nbsp;·&nbsp; <a href="review-planted-defects.md">Planted-defect review</a> &nbsp;·&nbsp; <a href="review-real-commit.md">Real-commit review</a> &nbsp;·&nbsp; <a href="test-gap.md">Test-gap analysis</a> &nbsp;·&nbsp; <a href="architecture-assessment.md">Architecture assessment</a> &nbsp;·&nbsp; <a href="https://www.agensi.io/skills/banjo-sniffs-evidence-based-code-review-architecture"><b>Get it on Agensi</b></a>
 </p>
 
 ---
