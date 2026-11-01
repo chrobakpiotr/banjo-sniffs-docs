@@ -2,10 +2,8 @@
   <a href="README.md"><img src="logo.png" alt="Banjo Sniffs logo" width="120"></a>
 </p>
 
-<p align="center"><i>Banjo Sniffs out the gap between what the ticket accepted, what the tests prove, and what the diff claims.</i></p>
-
 <p align="center">
-  <a href="README.md">Home</a> &nbsp;·&nbsp; <b>User guide</b> &nbsp;·&nbsp; <a href="review-real-commit.md">Real-commit review</a> &nbsp;·&nbsp; <a href="review-planted-defects.md">Planted-defect review</a> &nbsp;·&nbsp; <a href="test-gap.md">Test-gap analysis</a> &nbsp;·&nbsp; <a href="architecture-assessment.md">Architecture assessment</a> &nbsp;·&nbsp; <a href="https://www.agensi.io/skills/banjo-sniffs-ai-assisted-software-development"><b>Get it on Agensi</b></a>
+  <a href="README.md">Home</a> &nbsp;·&nbsp; <b>User guide</b> &nbsp;·&nbsp; <a href="review-planted-defects.md">Planted-defect review</a> &nbsp;·&nbsp; <a href="review-real-commit.md">Real-commit review</a> &nbsp;·&nbsp; <a href="test-gap.md">Test-gap analysis</a> &nbsp;·&nbsp; <a href="architecture-assessment.md">Architecture assessment</a> &nbsp;·&nbsp; <a href="https://www.agensi.io/skills/banjo-sniffs-ai-assisted-software-development"><b>Get it on Agensi</b></a>
 </p>
 
 ---
@@ -94,4 +92,4 @@ Banjo Sniffs does not require external network access by default. Do not provide
 
 ---
 
-<p align="center"><sub>© 2026 Piotr Chrobak · Banjo Sniffs™ · <a href="LICENSE">Licence</a> · Bug reports for the skill: piotr.chrobak.contact@gmail.com</sub></p>
+<p align="center"><sub>© 2026 Piotr Chrobak · Banjo Sniffs™ · <a href="LICENSE">License</a> · Bug reports for the skill: piotr.chrobak.contact@gmail.com</sub></p>

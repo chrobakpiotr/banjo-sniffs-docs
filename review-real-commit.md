@@ -2,10 +2,8 @@
   <a href="README.md"><img src="logo.png" alt="Banjo Sniffs logo" width="120"></a>
 </p>
 
-<p align="center"><i>Banjo Sniffs out the gap between what the ticket accepted, what the tests prove, and what the diff claims.</i></p>
-
 <p align="center">
-  <a href="README.md">Home</a> &nbsp;·&nbsp; <a href="user-guide.md">User guide</a> &nbsp;·&nbsp; <b>Real-commit review</b> &nbsp;·&nbsp; <a href="review-planted-defects.md">Planted-defect review</a> &nbsp;·&nbsp; <a href="test-gap.md">Test-gap analysis</a> &nbsp;·&nbsp; <a href="architecture-assessment.md">Architecture assessment</a> &nbsp;·&nbsp; <a href="https://www.agensi.io/skills/banjo-sniffs-ai-assisted-software-development"><b>Get it on Agensi</b></a>
+  <a href="README.md">Home</a> &nbsp;·&nbsp; <a href="user-guide.md">User guide</a> &nbsp;·&nbsp; <a href="review-planted-defects.md">Planted-defect review</a> &nbsp;·&nbsp; <b>Real-commit review</b> &nbsp;·&nbsp; <a href="test-gap.md">Test-gap analysis</a> &nbsp;·&nbsp; <a href="architecture-assessment.md">Architecture assessment</a> &nbsp;·&nbsp; <a href="https://www.agensi.io/skills/banjo-sniffs-ai-assisted-software-development"><b>Get it on Agensi</b></a>
 </p>
 
 ---
@@ -13,14 +11,16 @@
 
 # Demonstration: review of a real public commit
 
+<p align="center"><img src="media/03-real-commit.png" alt="Demonstration: review of a real public commit" width="760"></p>
+
 > [!NOTE]
-> **A real commit, no planted defect.** The review was run against a commit in the author's public repository. The project's tests need a private package that was not installed, so the reviewer could not run them: it recorded them as `NOT RUN`, kept four criteria `UNVERIFIED` and did not rely on the author's own "29 tests passed". Of its two low-severity concerns, the owner later confirmed the first as a real contract gap and fixed it in [`2b3eee36`](https://github.com/chrobakpiotr/showcase-application/commit/2b3eee3640949389f610d97c1213bf40dda0c634).
+> **A real commit, no planted defect.** The review was run against a commit in the author's public repository. The project's tests need a private package that was not installed, so the reviewer could not run them: it recorded them as `NOT RUN`, kept four criteria `UNVERIFIED` and did not rely on the author's own "29 tests OK". The owner later confirmed one of its two low-severity concerns, that legacy claims were checked per epic, as a real contract gap and fixed it in [`2b3eee36`](https://github.com/chrobakpiotr/showcase-application/commit/2b3eee3640949389f610d97c1213bf40dda0c634).
 
 | | |
 |---|---|
-| **Subject** | [`75c0fdd`](https://github.com/chrobakpiotr/showcase-application/commit/75c0fdd7af9714b86974771c1189cf41b46fe90b) in [showcase-application](https://github.com/chrobakpiotr/showcase-application), 7 files, +221 / -24 |
+| **Subject** | [`75c0fdd`](https://github.com/chrobakpiotr/showcase-application/commit/75c0fdd7af9714b86974771c1189cf41b46fe90b) in [showcase-application](https://github.com/chrobakpiotr/showcase-application), 7 files, 221 insertions, 24 deletions |
 | **Accepted specification** | the "Contract" section of the commit's own review README, adopted by the requester |
-| **Result** | **INCOMPLETE** - 12 criteria, none `NOT_MET`, four `UNVERIFIED`, two low-severity concerns |
+| **Result** | **INCOMPLETE**: 12 criteria, none `NOT_MET`, four `UNVERIFIED`, two low-severity concerns |
 | **Skill and model** | Banjo Sniffs 1.2.0, Claude Sonnet-class model, fresh context, nothing else loaded |
 | **Provenance** | the diff hash, file hash and probe output were reproduced independently |
 
@@ -135,9 +135,9 @@ It does not establish: real lock path, lock semantics, linked-worktree behavior,
 - **Handover:** /work/showcase-review/handover.md
 
 
-<p align="center"><a href="user-guide.md">← User guide</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="review-planted-defects.md">Planted-defect review →</a></p>
+<p align="center"><a href="review-planted-defects.md">← Planted-defect review</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="test-gap.md">Test-gap analysis →</a></p>
 
 
 ---
 
-<p align="center"><sub>© 2026 Piotr Chrobak · Banjo Sniffs™ · <a href="LICENSE">Licence</a> · Bug reports for the skill: piotr.chrobak.contact@gmail.com</sub></p>
+<p align="center"><sub>© 2026 Piotr Chrobak · Banjo Sniffs™ · <a href="LICENSE">License</a> · <a href="https://www.agensi.io/skills/banjo-sniffs-ai-assisted-software-development">Get it on Agensi</a></sub></p>

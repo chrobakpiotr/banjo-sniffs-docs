@@ -2,16 +2,16 @@
   <a href="README.md"><img src="logo.png" alt="Banjo Sniffs logo" width="120"></a>
 </p>
 
-<p align="center"><i>Banjo Sniffs out the gap between what the ticket accepted, what the tests prove, and what the diff claims.</i></p>
-
 <p align="center">
-  <a href="README.md">Home</a> &nbsp;·&nbsp; <a href="user-guide.md">User guide</a> &nbsp;·&nbsp; <a href="review-real-commit.md">Real-commit review</a> &nbsp;·&nbsp; <a href="review-planted-defects.md">Planted-defect review</a> &nbsp;·&nbsp; <b>Test-gap analysis</b> &nbsp;·&nbsp; <a href="architecture-assessment.md">Architecture assessment</a> &nbsp;·&nbsp; <a href="https://www.agensi.io/skills/banjo-sniffs-ai-assisted-software-development"><b>Get it on Agensi</b></a>
+  <a href="README.md">Home</a> &nbsp;·&nbsp; <a href="user-guide.md">User guide</a> &nbsp;·&nbsp; <a href="review-planted-defects.md">Planted-defect review</a> &nbsp;·&nbsp; <a href="review-real-commit.md">Real-commit review</a> &nbsp;·&nbsp; <b>Test-gap analysis</b> &nbsp;·&nbsp; <a href="architecture-assessment.md">Architecture assessment</a> &nbsp;·&nbsp; <a href="https://www.agensi.io/skills/banjo-sniffs-ai-assisted-software-development"><b>Get it on Agensi</b></a>
 </p>
 
 ---
 
 
 # Demonstration: test-gap analysis
+
+<p align="center"><img src="media/04-test-gap.png" alt="Demonstration: test-gap analysis" width="760"></p>
 
 > [!NOTE]
 > **Static analysis, nothing executed.** The same synthetic repository as the planted-defect review. The assistant maps each acceptance criterion to the tests that would fail on a wrong implementation, ranks the gaps and proposes the smallest check for each.
@@ -91,9 +91,9 @@ These classes describe existing checks. They are not a review disposition and do
 Not inspected: git history and diff against the base branch, `.git` contents, `__pycache__` files, any CI configuration (none was found in the tree listing), and any test outside `tests/`. No tests were executed, so no claim is made that the existing tests pass.
 
 
-<p align="center"><a href="review-planted-defects.md">← Planted-defect review</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="architecture-assessment.md">Architecture assessment →</a></p>
+<p align="center"><a href="review-real-commit.md">← Real-commit review</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="architecture-assessment.md">Architecture assessment →</a></p>
 
 
 ---
 
-<p align="center"><sub>© 2026 Piotr Chrobak · Banjo Sniffs™ · <a href="LICENSE">Licence</a> · Bug reports for the skill: piotr.chrobak.contact@gmail.com</sub></p>
+<p align="center"><sub>© 2026 Piotr Chrobak · Banjo Sniffs™ · <a href="LICENSE">License</a> · <a href="https://www.agensi.io/skills/banjo-sniffs-ai-assisted-software-development">Get it on Agensi</a></sub></p>

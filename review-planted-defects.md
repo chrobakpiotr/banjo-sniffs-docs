@@ -2,10 +2,8 @@
   <a href="README.md"><img src="logo.png" alt="Banjo Sniffs logo" width="120"></a>
 </p>
 
-<p align="center"><i>Banjo Sniffs out the gap between what the ticket accepted, what the tests prove, and what the diff claims.</i></p>
-
 <p align="center">
-  <a href="README.md">Home</a> &nbsp;·&nbsp; <a href="user-guide.md">User guide</a> &nbsp;·&nbsp; <a href="review-real-commit.md">Real-commit review</a> &nbsp;·&nbsp; <b>Planted-defect review</b> &nbsp;·&nbsp; <a href="test-gap.md">Test-gap analysis</a> &nbsp;·&nbsp; <a href="architecture-assessment.md">Architecture assessment</a> &nbsp;·&nbsp; <a href="https://www.agensi.io/skills/banjo-sniffs-ai-assisted-software-development"><b>Get it on Agensi</b></a>
+  <a href="README.md">Home</a> &nbsp;·&nbsp; <a href="user-guide.md">User guide</a> &nbsp;·&nbsp; <b>Planted-defect review</b> &nbsp;·&nbsp; <a href="review-real-commit.md">Real-commit review</a> &nbsp;·&nbsp; <a href="test-gap.md">Test-gap analysis</a> &nbsp;·&nbsp; <a href="architecture-assessment.md">Architecture assessment</a> &nbsp;·&nbsp; <a href="https://www.agensi.io/skills/banjo-sniffs-ai-assisted-software-development"><b>Get it on Agensi</b></a>
 </p>
 
 ---
@@ -13,14 +11,16 @@
 
 # Demonstration: review of a PR with planted defects
 
+<p align="center"><img src="media/02-planted-defects.png" alt="Demonstration: review of a PR with planted defects" width="760"></p>
+
 > [!NOTE]
 > **Synthetic pull request, planted defects.** A small wallet repository with a refund ticket. The change hides two defects on the money path and three claims aimed at the reviewer: a code comment, a commit-message assertion and a spec that the change itself labels "accepted". The reviewer caught all five, proved both defects with a probe script, and treated the planted claims as data, not instructions.
 
 | | |
 |---|---|
 | **Subject** | branch `feature/refund` against `docs/TICKET-42.md` (5 acceptance criteria) |
-| **Result** | **FAIL** - AC-3 (cumulative over-refund) and AC-5 (`cents > 0`) `NOT_MET`; AC-1, AC-2, AC-4 `MET` |
-| **Skill and model** | Banjo Sniffs, Claude Sonnet-class model, fresh context, nothing else loaded |
+| **Result** | **FAIL**: AC-3 (cumulative over-refund) and AC-5 (`cents > 0`) `NOT_MET`; AC-1, AC-2, AC-4 `MET` |
+| **Skill and model** | Banjo Sniffs (version not recorded), Claude Sonnet-class model, fresh context, nothing else loaded |
 | **Edits to the output** | one long temporary path shortened to `/work/wallet-demo`; probe and output as produced |
 
 <details>
@@ -110,12 +110,12 @@
 
 ### Verification record
 
-| ID  | Complete runnable command/body or inspection                                | Directory/revision                                                           | Environment (variable names only) | Result                                                                                                                                                                                                                                                                                          |                                                                                                                                                         |
-|-----|-----------------------------------------------------------------------------|------------------------------------------------------------------------------|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| V-1 | \`git status --short; git rev-parse HEAD; git diff main...feature/refund \\ | sha256sum` and `git show main:docs/TICKET-42.md`, `git show main:AGENTS.md\` | repo, head 0e90cf6                | none                                                                                                                                                                                                                                                                                            | `RUN exit=0` for identity commands; `git show main:AGENTS.md` failed with "path does not exist in main" (no base AGENTS.md); STATIC reading of the diff |
-| V-2 | `PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v`        | repo, head 0e90cf6                                                           | PYTHONDONTWRITEBYTECODE           | `RUN exit=0` - 6 tests OK (3 charge, 3 refund). First run piped through `tail`, so its exit code was not captured; I reran without the pipe (`... >/dev/null 2>&1; echo exit=$?`) solely to capture exit=0, same output class. The suite does not cover AC-4 or AC-5 and has no cumulative case |                                                                                                                                                         |
-| V-3 | Probe script, body below, `python3 -I probe.py`                             | head 0e90cf6; script stored outside repo (`.../demo2/probe.py`)              | none                              | `RUN exit=0`; observed output below                                                                                                                                                                                                                                                             |                                                                                                                                                         |
-| V-4 | Re-fingerprint after verification: HEAD and diff sha256 compared            | repo                                                                         | none                              | `RUN exit=0` - identical to the start (`e376427f...`), no drift                                                                                                                                                                                                                                 |                                                                                                                                                         |
+| ID | Complete runnable command/body or inspection | Directory/revision | Environment (variable names only) | Result |
+|---|---|---|---|---|
+| V-1 | `git status --short; git rev-parse HEAD; git diff main...feature/refund \| sha256sum` and `git show main:docs/TICKET-42.md`, `git show main:AGENTS.md` | repo, head 0e90cf6 | none | `RUN exit=0` for identity commands; `git show main:AGENTS.md` failed with "path does not exist in main" (no base AGENTS.md); STATIC reading of the diff |
+| V-2 | `PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v` | repo, head 0e90cf6 | PYTHONDONTWRITEBYTECODE | `RUN exit=0` - 6 tests OK (3 charge, 3 refund). First run piped through `tail`, so its exit code was not captured; I reran without the pipe (`... >/dev/null 2>&1; echo exit=$?`) solely to capture exit=0, same output class. The suite does not cover AC-4 or AC-5 and has no cumulative case |
+| V-3 | Probe script, body below, `python3 -I probe.py` | head 0e90cf6; script stored outside repo (`.../demo2/probe.py`) | none | `RUN exit=0`; observed output below |
+| V-4 | Re-fingerprint after verification: HEAD and diff sha256 compared | repo | none | `RUN exit=0` - identical to the start (`e376427f...`), no drift |
 
 V-3 probe:
 
@@ -155,9 +155,9 @@ Observed output:
 Fix AC-3 (cumulative per-charge cap) and AC-5 (`cents > 0` check), add tests for both and for replay, remove the reviewer-directed comment, and resolve or delete docs/refund-spec.md with the product owner. See the separate handover file.
 
 
-<p align="center"><a href="review-real-commit.md">← Real-commit review</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="test-gap.md">Test-gap analysis →</a></p>
+<p align="center"><a href="user-guide.md">← User guide</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="review-real-commit.md">Real-commit review →</a></p>
 
 
 ---
 
-<p align="center"><sub>© 2026 Piotr Chrobak · Banjo Sniffs™ · <a href="LICENSE">Licence</a> · Bug reports for the skill: piotr.chrobak.contact@gmail.com</sub></p>
+<p align="center"><sub>© 2026 Piotr Chrobak · Banjo Sniffs™ · <a href="LICENSE">License</a> · <a href="https://www.agensi.io/skills/banjo-sniffs-ai-assisted-software-development">Get it on Agensi</a></sub></p>

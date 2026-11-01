@@ -2,16 +2,16 @@
   <a href="README.md"><img src="logo.png" alt="Banjo Sniffs logo" width="120"></a>
 </p>
 
-<p align="center"><i>Banjo Sniffs out the gap between what the ticket accepted, what the tests prove, and what the diff claims.</i></p>
-
 <p align="center">
-  <a href="README.md">Home</a> &nbsp;·&nbsp; <a href="user-guide.md">User guide</a> &nbsp;·&nbsp; <a href="review-real-commit.md">Real-commit review</a> &nbsp;·&nbsp; <a href="review-planted-defects.md">Planted-defect review</a> &nbsp;·&nbsp; <a href="test-gap.md">Test-gap analysis</a> &nbsp;·&nbsp; <b>Architecture assessment</b> &nbsp;·&nbsp; <a href="https://www.agensi.io/skills/banjo-sniffs-ai-assisted-software-development"><b>Get it on Agensi</b></a>
+  <a href="README.md">Home</a> &nbsp;·&nbsp; <a href="user-guide.md">User guide</a> &nbsp;·&nbsp; <a href="review-planted-defects.md">Planted-defect review</a> &nbsp;·&nbsp; <a href="review-real-commit.md">Real-commit review</a> &nbsp;·&nbsp; <a href="test-gap.md">Test-gap analysis</a> &nbsp;·&nbsp; <b>Architecture assessment</b> &nbsp;·&nbsp; <a href="https://www.agensi.io/skills/banjo-sniffs-ai-assisted-software-development"><b>Get it on Agensi</b></a>
 </p>
 
 ---
 
 
 # Demonstration: architecture assessment
+
+<p align="center"><img src="media/05-architecture.png" alt="Demonstration: architecture assessment" width="760"></p>
 
 > [!NOTE]
 > **Synthetic design brief, no code.** A proposal to move a local CSV validator to a remote service collides with the accepted constraints. The assistant compares the options, keeps the current design on the table, labels its recommendation `PROPOSED` and names the cheapest next evidence instead of inventing targets.
@@ -61,4 +61,4 @@ Once an implementation and runtime are available, measure peak memory on those f
 
 ---
 
-<p align="center"><sub>© 2026 Piotr Chrobak · Banjo Sniffs™ · <a href="LICENSE">Licence</a> · Bug reports for the skill: piotr.chrobak.contact@gmail.com</sub></p>
+<p align="center"><sub>© 2026 Piotr Chrobak · Banjo Sniffs™ · <a href="LICENSE">License</a> · <a href="https://www.agensi.io/skills/banjo-sniffs-ai-assisted-software-development">Get it on Agensi</a></sub></p>
