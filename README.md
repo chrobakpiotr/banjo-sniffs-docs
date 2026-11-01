@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <img alt="version 1.3.1" src="https://img.shields.io/badge/version-1.3.1-0d7d73?style=flat-square">
+  <img alt="version 1.4.0" src="https://img.shields.io/badge/version-1.4.0-0d7d73?style=flat-square">
   <img alt="read-only by default" src="https://img.shields.io/badge/read--only-by%20default-0d7d73?style=flat-square">
   <img alt="any stack" src="https://img.shields.io/badge/stack-any-0d7d73?style=flat-square">
   <img alt="no network required" src="https://img.shields.io/badge/network-none%20required-0d7d73?style=flat-square">
@@ -39,7 +39,7 @@ It is not a scanner and has no runtime. It reads and runs only what you authoriz
 
 ## See it work
 
-Each demonstration states the skill version it was produced with; the current version is 1.3.1. The images are illustrations of the real output; the full reports are on the linked pages.
+Each demonstration states the skill version it was produced with; the current version is 1.4.0. The images are illustrations of the real output; the full reports are on the linked pages.
 
 <table>
 <tr>
