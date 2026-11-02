@@ -17,6 +17,7 @@ https://www.agensi.io/skills/banjo-sniffs-evidence-based-code-review-architectur
   published here, state the model and effort that ran ("unknown" if the runner does not say). At the start of a
   non-trivial task the main agent suggests to the owner which model and effort fit the session. Full rule:
   `docs/agentic-sdd/model-routing.md` in the private agent-harness repository.
-- Commit identity (owner decision, 2026-11-02): agents commit as `Claude <noreply@anthropic.com>` so the session can
-  sign the commits, and every commit message ends with
+- Commit identity (owner update, 2026-11-02): every agent may commit under its own identity.
+  Do not impersonate another agent or provider. Use commit signing when available; lack of signing capability
+  does not block an otherwise authorized commit or push. Every commit message must still end with
   `Co-Authored-By: Piotr Chrobak <125372205+chrobakpiotr@users.noreply.github.com>`.
