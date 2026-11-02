@@ -10,3 +10,13 @@ https://www.agensi.io/skills/banjo-sniffs-evidence-based-code-review-architectur
   agent-harness repository, never into this repository.
 - Write a plain hyphen `-`, never an em dash or an en dash.
 - Work on `main` only and push directly to it (owner decision, 2026-11-01).
+- Model and reasoning routing (owner rule, 2026-11-02): give every delegate an explicit tier and effort by task
+  class; the frontier tier and max effort need the owner's approval for each named task, and with nobody to ask the
+  work stays within standard / high and the handoff records the recommendation. Never name a model in rules or
+  documentation; the exception is evidence: review reports and handoffs, including the demonstration reports
+  published here, state the model and effort that ran ("unknown" if the runner does not say). At the start of a
+  non-trivial task the main agent suggests to the owner which model and effort fit the session. Full rule:
+  `docs/agentic-sdd/model-routing.md` in the private agent-harness repository.
+- Commit identity (owner decision, 2026-11-02): agents commit as `Claude <noreply@anthropic.com>` so the session can
+  sign the commits, and every commit message ends with
+  `Co-Authored-By: Piotr Chrobak <125372205+chrobakpiotr@users.noreply.github.com>`.
