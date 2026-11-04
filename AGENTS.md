@@ -21,3 +21,7 @@ https://www.agensi.io/skills/banjo-sniffs-evidence-based-code-review-architectur
   Do not impersonate another agent or provider. Use commit signing when available; lack of signing capability
   does not block an otherwise authorized commit or push. Every commit message must still end with
   `Co-Authored-By: Piotr Chrobak <125372205+chrobakpiotr@users.noreply.github.com>`.
+
+## Release notes
+
+For every new Banjo Sniffs release, add a "What's new in <version>" section at the bottom of `user-guide.md`, after the previous one (owner decision 2026-11-04). Describe what users get in your own words; never copy the skill's text.

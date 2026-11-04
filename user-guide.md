@@ -16,16 +16,6 @@
 
 Banjo Sniffs guides an engineering assistant through evidence-based software work. It supplies instructions, optional methods, and adaptable templates. It does not provide a runtime or grant access to your project, tools, or services.
 
-## What's new in 1.5.0
-
-- **Follow-up reviews.** When the author answers a review with a fix, the assistant carries the earlier findings forward and marks each one `CLOSED`, `OPEN` or `PARTIAL` with evidence. The scope is the fix plus the criteria it touches, and the earlier regression checks run again. See the [follow-up review demonstration](review-follow-up.md).
-- **Range, release and multi-repository reviews.** Each commit in a range is mapped to the review that covered it, and commits nobody reviewed are flagged. A review across several repositories names one base per repository.
-- **Clearer evidence labels.** A `RUN` entry says when a check ran only against fakes, was read from a hosted CI run the reviewer did not start, or is a model-based estimate. A check whose exit status was lost counts as not run.
-- **Clearer findings and decisions.** A default severity scale (Blocker, High, Medium, Low, Note) when your project has none; a "Required before acceptance" list that advises without changing the disposition; a `deviation pending adoption` status for a documented departure from the spec that waits for your decision; and an explicit marker when two accepted sources conflict, instead of the reviewer picking one.
-- **Who reviewed.** The report names the reviewer's model and reasoning effort as the host reports them, and whether the requester or the implementer overlaps with the reviewer.
-- **More things to check.** Quantities a user can earn, spend or lose beyond money (game currencies, credits), deferred handlers, run-as identity, writes to fixed locations, test shortcuts added by the change, and optional seeded faults to test the tests.
-- **When files are not an option.** If the assistant cannot write or keep files, it returns the full report as text. If you publish results, it can prepare a plain-language summary instead of the full report.
-
 ## Choose a mode
 
 - **Change review:** Compare a delivered change with accepted requirements and project context. Reviews are read-only by default. Requested review reports are allowed; implementation edits, commits, dependency installs, and deployment need separate authorization.
@@ -108,6 +98,16 @@ Banjo Sniffs does not require external network access by default. Do not provide
 - [Follow-up review after a fix](review-follow-up.md)
 - [Test-gap analysis](test-gap.md)
 - [Architecture assessment](architecture-assessment.md)
+
+## What's new in 1.5.0
+
+- **Follow-up reviews.** When the author answers a review with a fix, the assistant carries the earlier findings forward and marks each one `CLOSED`, `OPEN` or `PARTIAL` with evidence. The scope is the fix plus the criteria it touches, and the earlier regression checks run again. See the [follow-up review demonstration](review-follow-up.md).
+- **Range, release and multi-repository reviews.** Each commit in a range is mapped to the review that covered it, and commits nobody reviewed are flagged. A review across several repositories names one base per repository.
+- **Clearer evidence labels.** A `RUN` entry says when a check ran only against fakes, was read from a hosted CI run the reviewer did not start, or is a model-based estimate. A check whose exit status was lost counts as not run.
+- **Clearer findings and decisions.** A default severity scale (Blocker, High, Medium, Low, Note) when your project has none; a "Required before acceptance" list that advises without changing the disposition; a `deviation pending adoption` status for a documented departure from the spec that waits for your decision; and an explicit marker when two accepted sources conflict, instead of the reviewer picking one.
+- **Who reviewed.** The report names the reviewer's model and reasoning effort as the host reports them, and whether the requester or the implementer overlaps with the reviewer.
+- **More things to check.** Quantities a user can earn, spend or lose beyond money (game currencies, credits), deferred handlers, run-as identity, writes to fixed locations, test shortcuts added by the change, and optional seeded faults to test the tests.
+- **When files are not an option.** If the assistant cannot write or keep files, it returns the full report as text. If you publish results, it can prepare a plain-language summary instead of the full report.
 
 ---
 
