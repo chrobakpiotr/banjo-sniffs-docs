@@ -10,7 +10,7 @@
 
 # User guide
 
-<sub>Banjo Sniffs 1.4.0</sub>
+<sub>Banjo Sniffs 1.5.0</sub>
 
 > Banjo Sniffs out the gap between what the ticket accepted, what the tests prove, and what the diff claims.
 
