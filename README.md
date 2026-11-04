@@ -39,12 +39,16 @@ It is not a scanner and has no runtime. It reads and runs only what you authoriz
 
 ## See it work
 
-Each demonstration states the skill version it was produced with; the current version is 1.5.0. The images are illustrations of the real output; the full reports are on the linked pages.
+Each demonstration states the skill version it was produced with; the current version is 1.5.0. The images are illustrations of the real output; the full reports are on the linked pages. What changed in 1.5.0 is in the [user guide](user-guide.md#whats-new-in-150).
 
 <table>
 <tr>
 <td width="46%"><a href="review-planted-defects.md"><img src="media/02-planted-defects.png" alt="Review of a PR with planted defects"></a></td>
 <td><b><a href="review-planted-defects.md">Review of a PR with planted defects</a></b><br>Two money-path defects and three claims aimed at the reviewer, hidden in a synthetic refund PR.<br><br><b>FAIL</b>: all five caught, both defects proved with a probe.</td>
+</tr>
+<tr>
+<td width="46%" align="center"><a href="review-follow-up.md"><b>Round 2</b></a><br><sub>new in 1.5.0</sub></td>
+<td><b><a href="review-follow-up.md">Follow-up review after a fix</a></b><br>The author's fix claims "all findings fixed". It fixes some findings, half-fixes another and quietly changes how a retried charge behaves.<br><br><b>FAIL</b>: earlier findings marked <code>CLOSED</code>, <code>PARTIAL</code> and <code>OPEN</code>; all three planted gaps found.</td>
 </tr>
 <tr>
 <td width="46%"><a href="review-real-commit.md"><img src="media/03-real-commit.png" alt="Review of a real public commit"></a></td>

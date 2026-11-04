@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="README.md">Home</a> &nbsp;·&nbsp; <b>User guide</b> &nbsp;·&nbsp; <a href="review-planted-defects.md">Planted-defect review</a> &nbsp;·&nbsp; <a href="review-real-commit.md">Real-commit review</a> &nbsp;·&nbsp; <a href="test-gap.md">Test-gap analysis</a> &nbsp;·&nbsp; <a href="architecture-assessment.md">Architecture assessment</a> &nbsp;·&nbsp; <a href="https://www.agensi.io/skills/banjo-sniffs-evidence-based-code-review-architecture"><b>Get it on Agensi</b></a>
+  <a href="README.md">Home</a> &nbsp;·&nbsp; <b>User guide</b> &nbsp;·&nbsp; <a href="review-planted-defects.md">Planted-defect review</a> &nbsp;·&nbsp; <a href="review-follow-up.md">Follow-up review</a> &nbsp;·&nbsp; <a href="review-real-commit.md">Real-commit review</a> &nbsp;·&nbsp; <a href="test-gap.md">Test-gap analysis</a> &nbsp;·&nbsp; <a href="architecture-assessment.md">Architecture assessment</a> &nbsp;·&nbsp; <a href="https://www.agensi.io/skills/banjo-sniffs-evidence-based-code-review-architecture"><b>Get it on Agensi</b></a>
 </p>
 
 ---
@@ -15,6 +15,16 @@
 > Banjo Sniffs out the gap between what the ticket accepted, what the tests prove, and what the diff claims.
 
 Banjo Sniffs guides an engineering assistant through evidence-based software work. It supplies instructions, optional methods, and adaptable templates. It does not provide a runtime or grant access to your project, tools, or services.
+
+## What's new in 1.5.0
+
+- **Follow-up reviews.** When the author answers a review with a fix, the assistant carries the earlier findings forward and marks each one `CLOSED`, `OPEN` or `PARTIAL` with evidence. The scope is the fix plus the criteria it touches, and the earlier regression checks run again. See the [follow-up review demonstration](review-follow-up.md).
+- **Range, release and multi-repository reviews.** Each commit in a range is mapped to the review that covered it, and commits nobody reviewed are flagged. A review across several repositories names one base per repository.
+- **Clearer evidence labels.** A `RUN` entry says when a check ran only against fakes, was read from a hosted CI run the reviewer did not start, or is a model-based estimate. A check whose exit status was lost counts as not run.
+- **Clearer findings and decisions.** A default severity scale (Blocker, High, Medium, Low, Note) when your project has none; a "Required before acceptance" list that advises without changing the disposition; a `deviation pending adoption` status for a documented departure from the spec that waits for your decision; and an explicit marker when two accepted sources conflict, instead of the reviewer picking one.
+- **Who reviewed.** The report names the reviewer's model and reasoning effort as the host reports them, and whether the requester or the implementer overlaps with the reviewer.
+- **More things to check.** Quantities a user can earn, spend or lose beyond money (game currencies, credits), deferred handlers, run-as identity, writes to fixed locations, test shortcuts added by the change, and optional seeded faults to test the tests.
+- **When files are not an option.** If the assistant cannot write or keep files, it returns the full report as text. If you publish results, it can prepare a plain-language summary instead of the full report.
 
 ## Choose a mode
 
@@ -54,11 +64,13 @@ A review uses separate labels for individual criteria and the overall dispositio
 | `NOT_MET`            | Available evidence shows the criterion is not satisfied.                                                                                                   |
 | `UNVERIFIED`         | Evidence, access, or an unresolved decision is insufficient to determine the result.                                                                       |
 | `PASS`               | Overall review disposition: the reviewed scope meets the accepted criteria based on available evidence; behavioral criteria were exercised, not only read. |
-| `PASS (static only)` | Every behavioral criterion rests on reading the source; the runtime gap is named.                                                                          |
+| `PASS (static only)` | At least one behavioral criterion rests only on reading the source; the summary lists those criteria and names the runtime gap. |
 | `FAIL`               | Overall review disposition: one or more accepted criteria are not met.                                                                                     |
 | `INCOMPLETE`         | Overall review could not reach a complete disposition, for example because required evidence is unavailable.                                               |
+| `CLOSED` / `OPEN` / `PARTIAL` | Follow-up review only: what happened to each earlier finding after a fix, with the evidence for the mark. |
+| `deviation pending adoption` | A finding status: the change deliberately differs from what was accepted, the author has documented why, and you have not yet said whether you accept the difference. The criterion stays `NOT_MET` until you decide. |
 
-Every entry in the verification record is typed `RUN exit=<n>` (executed, with its output), `NOT RUN: <reason>` (planned, unavailable or declined), or `STATIC` (established by reading source), so a planned check is never reported as an executed one. The report opens with a seven-line summary (disposition, blockers, owner decisions, what ran, what did not, basis, next step); the handover points to the report and never restates its tables. Implementation acceptance (`ACCEPTED`, `NOT_ACCEPTED`, `UNVERIFIED`) is set only by the accepting owner.
+Every entry in the verification record is typed `RUN exit=<n>` (executed, with its output), `NOT RUN: <reason>` (planned, unavailable or declined), or `STATIC` (established by reading source), so a planned check is never reported as an executed one. The report opens with a short summary (disposition, blockers, owner decisions, what ran, what did not, basis, next step, and, when they apply, premise differences, environment limits and items required before acceptance); the handover points to the report and never restates its tables. Implementation acceptance (`ACCEPTED`, `NOT_ACCEPTED`, `UNVERIFIED`) is set only by the accepting owner.
 
 A test-gap analysis uses its own classes for existing checks: `COVERED` (a check would fail on a wrong implementation), `PARTIAL` (exercised but under-asserted), `UNCOVERED`, `UNVERIFIED`. These describe tests, not the implementation, and never turn into `MET`.
 
@@ -93,6 +105,7 @@ Banjo Sniffs does not require external network access by default. Do not provide
 
 - [Review of a real public commit](review-real-commit.md)
 - [Review of a synthetic PR with planted defects](review-planted-defects.md)
+- [Follow-up review after a fix](review-follow-up.md)
 - [Test-gap analysis](test-gap.md)
 - [Architecture assessment](architecture-assessment.md)
 
