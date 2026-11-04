@@ -10,7 +10,7 @@
 
 # User guide
 
-<sub>Banjo Sniffs 1.5.0</sub>
+<sub>Banjo Sniffs 1.6.0</sub>
 
 > Banjo Sniffs out the gap between what the ticket accepted, what the tests prove, and what the diff claims.
 
@@ -108,6 +108,16 @@ Banjo Sniffs does not require external network access by default. Do not provide
 - **Who reviewed.** The report names the reviewer's model and reasoning effort as the host reports them, and whether the requester or the implementer overlaps with the reviewer.
 - **More things to check.** Quantities a user can earn, spend or lose beyond money (game currencies, credits), deferred handlers, run-as identity, writes to fixed locations, test shortcuts added by the change, and optional seeded faults to test the tests.
 - **When files are not an option.** If the assistant cannot write or keep files, it returns the full report as text. If you publish results, it can prepare a plain-language summary instead of the full report.
+
+## What's new in 1.6.0
+
+- **Severity no longer decides the verdict by itself.** Severity now describes how bad and how likely a problem is. A small unmet requirement can be rated Low and the review still fails, and, when only process rules were missed and a run confirmed every behaviour, the report may add that the claim itself held. A safety problem the evidence confirms fails the review even if no requirement mentions it.
+- **Evidence that is not ready yet.** A CI run still in progress is marked as pending, so you know to come back, and it keeps the review incomplete. Evidence that can only exist after an integration step the reviewer may not take is named separately, and the best possible verdict is then `PASS (static only)`.
+- **Stronger evidence labels.** When the reviewer reads a CI job log, the report says so and relies only on the lines it quotes. Test suites with known failures, flaky checks and batches of seeded faults each get a standard way to be recorded.
+- **Sharper follow-up reviews.** The assistant reruns reproductions from every earlier round, looks just past the case a fix handles, compares commits after a rebase, and proves a new test by showing it fails without the fix. If it is not given the text of an earlier finding, it asks instead of guessing, and a finding only the implementer accepted stays open until you decide.
+- **New situations.** Moves and refactors that claim no behaviour change, getting a repository ready for public release, and proposed specs whose options need checking against what the underlying engine really does.
+- **More careful checks.** Probes are tried on a good and a bad variant before their numbers count, exit codes survive pipes and wrappers, test runners that stop at the first failure no longer hide the rest, and changed CI steps run under the same shell settings as the real runner. Test-gap analysis now compares documented steps with what a test does and asks for a check at each place a helper is used.
+- **Version on record.** The skill states its version and each report records the one that ran.
 
 ---
 
